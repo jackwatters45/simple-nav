@@ -1,0 +1,11 @@
+.eslintignore
+.gitignore
+.eslintrc.json
+.prettierignore
+.prettierrc.json
+index.html
+src
+tsconfig.json
+vite.config.ts
+.husky
+.vscode
