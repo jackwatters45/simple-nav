@@ -1,4 +1,4 @@
-import { ButtonProps } from '../../../../../types/SharedProps';
+import { ButtonProps } from '../../../../types/SharedProps';
 import { AlignedButton } from '../../../../styles/sharedComponents';
 import { ReactNode } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

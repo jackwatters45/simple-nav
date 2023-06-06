@@ -1,11 +1,11 @@
 {
-  "name": "simple-nav",
-  "version": "0.0.1",
+  "name": "@jackwatters/simple-nav",
+  "version": "0.0.3",
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist/**/*/"
   ],
   "license": "MIT",
   "author": "John Watters",
@@ -15,25 +15,17 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc  && vite build",
+    "prepublish": "tsc --outDir dist/",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier \"src/**/*.{js,jsx,ts,tsx,css,scss,md,html,json,yml}\" --write",
-    "compile": "tsc src/index.tsx --declaration --declarationMap --jsx react-jsx --esModuleInterop  --outDir dist",
     "preview": "vite preview",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.{ts,tsx,js,cjs}": [
-      "npm run lint:fix",
-      "npm run format"
-    ],
-    "*.{md,html,css,json,yml}": "prettier --write"
+    "*.{ts,tsx,js,cjs}": "npm run lint:fix",
+    "*.{md,html,css,json,yml}": "npm run lint:fix"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -68,7 +60,9 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
+    "rollup-plugin-dts": "^5.3.0",
     "typescript": "^5.0.2",
-    "vite": "^4.3.0"
+    "vite": "^4.3.0",
+    "vite-plugin-dts": "^2.3.0"
   }
 }
