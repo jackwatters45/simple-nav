@@ -4,6 +4,9 @@ import { IconComponent, IconProps } from '../../types/Icon.d';
 const StyledSvg = styled.svg<{ width?: number }>`
   width: ${({ width }) => width ?? 24}px;
   height: ${({ width }) => width ?? 24}px;
+  &path {
+    fill: ${(props) => props?.theme.colors.textPrimary};
+  }
 `;
 
 const Icon: typeof IconComponent = ({ path, ...props }: IconProps) => {
