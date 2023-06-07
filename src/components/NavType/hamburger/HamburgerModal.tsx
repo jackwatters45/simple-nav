@@ -19,7 +19,7 @@ export const MenuBackground = styled.nav`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  
+
   background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
   animation: ${slideIn} 0.4s ease-in-out;
 `;
