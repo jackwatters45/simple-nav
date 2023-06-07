@@ -17,6 +17,9 @@ const CollapsibleList = styled.div<CollapsibleListProps>`
       cursor: pointer;
     }
   }
+
+  font-size: 2rem;
+  font-weight: 700;
 `;
 
 interface Props {

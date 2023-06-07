@@ -4,6 +4,8 @@ import { ReactNode } from 'react';
 export const RegularNavContainer = styled.div`
   display: flex;
   align-items: center;
+  
+  gap: 2vw;
 `;
 
 interface Props {

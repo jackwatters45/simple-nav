@@ -1,6 +1,15 @@
 import { useModal, useModalParams } from 'react-hook-modal-pure';
 import { ReactNode } from 'react';
-import { styled } from 'styled-components';
+import { keyframes, styled } from 'styled-components';
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+`;
 
 export const MenuBackground = styled.nav`
   position: absolute;
@@ -10,6 +19,9 @@ export const MenuBackground = styled.nav`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  
+  background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
+  animation: ${slideIn} 0.4s ease-in-out;
 `;
 
 const MenuContentContainer = styled.ul`

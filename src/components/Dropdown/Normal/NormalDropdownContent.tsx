@@ -7,6 +7,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 100px;
+
+  background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  ${(props) => props?.theme?.shadow};
 `;
 
 interface Props {
