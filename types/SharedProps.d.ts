@@ -9,7 +9,7 @@ export interface ButtonOptions {
   text?: string;
 
   includeArrow?: boolean;
-  arrowSize?: number;
+  arrowSize?: string;
 }
 
 export interface ButtonProps {

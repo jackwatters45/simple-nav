@@ -1,7 +1,7 @@
 import HamburgerMenu from './hamburger/HamburgerMenu';
 import RegularNav from './RegularNav';
-import { useWindowWidth } from '../../context/WindowWidthContext';
 import { ReactNode } from 'react';
+import { useWindowWidth } from '../../context/WindowWidthContext';
 
 interface Props {
   children: ReactNode;

@@ -1,7 +1,7 @@
-import { ButtonProps } from '../../../../types/SharedProps';
-import { AlignedButton } from '../../../../styles/sharedComponents';
+import { ButtonProps } from '../../../../types/SharedProps.d';
+import { AlignedButton } from '../../../styles/sharedComponents';
 import { ReactNode } from 'react';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import MenuDownIcon from '../../../assets/MenuDownIcon';
 
 interface Props {
   buttonProps: ButtonProps;
@@ -11,24 +11,26 @@ interface Props {
   text?: string;
   includeArrow?: boolean;
 
-  arrowSize?: number;
+  arrowSize?: string;
 }
 
-const NavDropdownButton = ({
+const NormalDropdownButton = ({
   buttonProps,
   className,
   icon,
   text,
   includeArrow = true,
-  arrowSize = 0.5,
+  arrowSize = '.5rem',
 }: Props) => {
+  // TODO
+  console.log(arrowSize);
   return (
     <AlignedButton {...buttonProps} className={className}>
       {icon && icon}
       {text && <span>{text}</span>}
-      {includeArrow && <ExpandMoreIcon sx={{ width: arrowSize * 24 }} />}
+      {includeArrow && <MenuDownIcon size={arrowSize} />}
     </AlignedButton>
   );
 };
 
-export default NavDropdownButton;
+export default NormalDropdownButton;

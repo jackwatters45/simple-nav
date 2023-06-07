@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
-import { AlignedButton } from '../../../../styles/sharedComponents';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { AlignedButton } from '../../../styles/sharedComponents';
+import MenuDownIcon from '../../../assets/MenuDownIcon';
+import MenuRightIcon from '../../../assets/MenuRightIcon';
 
 const StyledHamburgerDropdownButton = styled(AlignedButton)`
   font-size: 2rem;
@@ -21,7 +21,7 @@ interface Props {
 const HamburgerDropdownButton = ({ className, text, isOpen, toggleIsOpen }: Props) => {
   return (
     <StyledHamburgerDropdownButton className={className} onClick={toggleIsOpen}>
-      {isOpen ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
+      {isOpen ? <MenuDownIcon /> : <MenuRightIcon />}
       {text}
     </StyledHamburgerDropdownButton>
   );

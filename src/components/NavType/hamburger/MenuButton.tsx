@@ -1,6 +1,6 @@
 import { AlignedButton } from '../../../styles/sharedComponents';
-import { ButtonProps } from '../../../types/SharedProps';
-import MenuIcon from '@mui/icons-material/Menu';
+import { ButtonProps } from '../../../../types/SharedProps.d';
+import MenuIcon from '../../../assets/MenuIcon';
 
 interface Props {
   buttonProps?: ButtonProps;

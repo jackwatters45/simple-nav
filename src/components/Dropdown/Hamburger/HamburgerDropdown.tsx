@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ButtonOptions } from '../../../../types/SharedProps';
+import { ButtonOptions } from '../../../../types/SharedProps.d';
 import HamburgerDropdownContent from './HamburgerDropdownContent';
 import HamburgerDropdownButton from './HamburgerDropdownButton';
 

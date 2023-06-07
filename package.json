@@ -1,11 +1,10 @@
 {
   "name": "@jackwatters/simple-nav",
-  "version": "0.0.3",
+  "version": "0.1.7",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/components/Exports/index.js",
   "files": [
-    "dist/**/*/"
+    "dist/"
   ],
   "license": "MIT",
   "author": "John Watters",
@@ -25,7 +24,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,cjs}": "npm run lint:fix",
-    "*.{md,html,css,json,yml}": "npm run lint:fix"
+    "*.{md,html,css,json,yml}": "npm run format"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",

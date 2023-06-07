@@ -1,13 +1,13 @@
-import './styles/reset.css';
+import '../styles/reset.css';
 import { useState } from 'react';
-import NavType from './components/NavType/NavType';
+import Nav from '../components/Exports/Nav';
 import { styled } from 'styled-components';
-import NavLink from './components/NavItems/NavLink';
-import NavDropdown from './components/NavItems/Dropdown/NavDropdown';
+import NavLink from '../components/Exports/NavLink';
+import NavDropdown from '../components/Exports/NavDropdown';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import NavButton from './components/NavItems/NavButton';
+import NavButton from '../components/Exports/NavButton';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ const App = () => {
   return (
     <StyledContainer>
       <button onClick={handleToggleUser}>Toggle user</button>
-      <NavType>
+      <Nav>
         {user ? (
           <>
             <NavDropdown
@@ -54,7 +54,7 @@ const App = () => {
             <NavLink to="/login" text="Log in" />
           </>
         )}
-      </NavType>
+      </Nav>
     </StyledContainer>
   );
 };
