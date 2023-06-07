@@ -10,27 +10,14 @@ const StyledHamburgerDropdownButton = styled(AlignedButton)`
   gap: 0.5rem;
 `;
 
-interface Props {
+interface Props extends ButtonOptions {
   isOpen: boolean;
   toggleIsOpen: () => void;
-  className?: string;
-  text?: string;
-  buttonOptions?: ButtonOptions;
 }
 
-const HamburgerDropdownButton = ({
-  className,
-  text,
-  isOpen,
-  toggleIsOpen,
-  buttonOptions,
-}: Props) => {
+const HamburgerDropdownButton = ({ className, text, isOpen, toggleIsOpen }: Props) => {
   return (
-    <StyledHamburgerDropdownButton
-      className={className}
-      onClick={toggleIsOpen}
-      {...buttonOptions}
-    >
+    <StyledHamburgerDropdownButton className={className} onClick={toggleIsOpen}>
       {isOpen ? <MenuDownIcon /> : <MenuRightIcon />}
       {text}
     </StyledHamburgerDropdownButton>

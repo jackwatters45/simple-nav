@@ -1,15 +1,9 @@
-import { ButtonProps } from '../../../../types/ButtonProps.d';
+import { ButtonOptions, ButtonProps } from '../../../../types/ButtonProps.d';
 import { AlignedButton } from '../../../styles/sharedComponents';
-import { ReactNode } from 'react';
 import MenuDownIcon from '../../../assets/MenuDownIcon';
 
-interface Props {
+interface Props extends ButtonOptions {
   buttonProps: ButtonProps;
-  className?: string;
-  icon?: ReactNode;
-  text?: string;
-  includeArrow?: boolean;
-  arrowSize?: string;
 }
 
 const NormalDropdownButton = ({
@@ -17,13 +11,14 @@ const NormalDropdownButton = ({
   className,
   icon,
   text,
+  includeText = true,
   includeArrow = true,
   arrowSize = '.5rem',
 }: Props) => {
   return (
     <AlignedButton {...buttonProps} className={className}>
       {icon && icon}
-      {text && <span>{text}</span>}
+      {includeText && <span>{text}</span>}
       {includeArrow && <MenuDownIcon size={arrowSize} />}
     </AlignedButton>
   );

@@ -4,6 +4,7 @@ export interface ButtonOptions {
   className?: string;
   icon?: ReactNode;
   text?: string;
+  includeText?: boolean;
   includeArrow?: boolean;
   arrowSize?: string;
 }

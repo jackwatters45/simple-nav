@@ -17,7 +17,7 @@ const HamburgerDropdown = ({ children, buttonOptions }: Props) => {
       <HamburgerDropdownButton
         isOpen={isOpen}
         toggleIsOpen={toggleIsOpen}
-        buttonOptions={buttonOptions}
+        {...buttonOptions}
       />
       <HamburgerDropdownContent isOpen={isOpen}>{children}</HamburgerDropdownContent>
     </div>
