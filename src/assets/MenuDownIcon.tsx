@@ -1,7 +1,7 @@
 import Icon from './Icon';
-import { PrefilledIconComponent, PrefilledIconProps } from '../../types/Icon.d';
+import { PrefilledIconComponent, IconOptions } from '../../types/Icon.d';
 
-const MenuDownIcon: typeof PrefilledIconComponent = (props: PrefilledIconProps) => {
+const MenuDownIcon: typeof PrefilledIconComponent = (props: IconOptions) => {
   return <Icon path={'M7,10L12,15L17,10H7Z'} {...props} />;
 };
 

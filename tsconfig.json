@@ -21,12 +21,12 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Output */
-    // "declaration": true,
-    // "declarationMap": true,
+    "declaration": true,
+    "declarationMap": true,
     "outDir": "dist",
     "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["src", "types"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules, src/example"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

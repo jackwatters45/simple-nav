@@ -21,8 +21,8 @@ const CollapsibleList = styled.div<CollapsibleListProps>`
 
 interface Props {
   isOpen: boolean;
-  className?: string;
   children: ReactNode;
+  className?: string;
 }
 
 const HamburgerDropdownContent = ({ isOpen, className, children }: Props) => {

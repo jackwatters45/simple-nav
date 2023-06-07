@@ -1,10 +1,11 @@
 {
   "name": "@jackwatters/simple-nav",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "type": "module",
   "main": "dist/components/Exports/index.js",
   "files": [
-    "dist/"
+    "dist/",
+    "types/"
   ],
   "license": "MIT",
   "author": "John Watters",

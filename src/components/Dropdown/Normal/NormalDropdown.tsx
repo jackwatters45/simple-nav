@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { useModalTrigger } from 'react-hook-modal-pure';
 import NormalDropdownButton from './NormalDropdownButton';
-import { ButtonOptions } from '../../../../types/SharedProps.d';
+import { ButtonOptions } from '../../../../types/ButtonProps.d';
 import NormalDropdownContent from './NormalDropdownContent';
 
 interface Props {

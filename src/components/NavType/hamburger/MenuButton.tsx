@@ -1,5 +1,5 @@
 import { AlignedButton } from '../../../styles/sharedComponents';
-import { ButtonProps } from '../../../../types/SharedProps.d';
+import { ButtonProps } from '../../../../types/ButtonProps.d';
 import MenuIcon from '../../../assets/MenuIcon';
 
 interface Props {

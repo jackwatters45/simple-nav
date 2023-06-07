@@ -1,7 +1,7 @@
 import { useWindowWidth } from '../../context/WindowWidthContext';
 import NormalDropdown from '../Dropdown/Normal/NormalDropdown';
 import HamburgerDropdown from '../Dropdown/Hamburger/HamburgerDropdown';
-import { ButtonOptions } from '../../../types/SharedProps.d';
+import { ButtonOptions } from '../../../types/ButtonProps.d';
 import { ReactNode } from 'react';
 
 interface Props {

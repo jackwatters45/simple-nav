@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ButtonOptions } from '../../../../types/SharedProps.d';
+import { ButtonOptions } from '../../../../types/ButtonProps.d';
 import HamburgerDropdownContent from './HamburgerDropdownContent';
 import HamburgerDropdownButton from './HamburgerDropdownButton';
 
@@ -17,7 +17,7 @@ const HamburgerDropdown = ({ children, buttonOptions }: Props) => {
       <HamburgerDropdownButton
         isOpen={isOpen}
         toggleIsOpen={toggleIsOpen}
-        {...buttonOptions}
+        buttonOptions={buttonOptions}
       />
       <HamburgerDropdownContent isOpen={isOpen}>{children}</HamburgerDropdownContent>
     </div>
