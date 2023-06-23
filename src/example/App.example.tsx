@@ -2,12 +2,12 @@ import '../styles/reset.css';
 import { useState } from 'react';
 import Nav from '../components/Exports/Nav';
 import { styled } from 'styled-components';
-import NavLink from '../components/Exports/NavLink';
+import NavLink from '../components/Exports/NavLink/NavLink';
 import NavDropdown from '../components/Exports/NavDropdown';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import NavButton from '../components/Exports/NavButton';
+import NavButton from '../components/Exports/NavButton/NavButton';
 
 const StyledContainer = styled.div`
   display: flex;

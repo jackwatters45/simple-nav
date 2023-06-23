@@ -1,6 +1,7 @@
-import { useWindowWidth } from '../../context/WindowWidthContext';
+import { useWindowWidth } from '../../../context/WindowWidthContext';
 import { ReactNode } from 'react';
-import { AlignedButton, StyledHamburgerNavLi } from '../../styles/sharedComponents';
+import { AlignedButton } from '../../../styles/sharedComponents';
+import NavButtonHamburger from './NavButtonHamburger';
 
 interface NavButtonProps {
   text: string;
@@ -21,9 +22,7 @@ const NavButton = ({ text, onClick, icon, className }: NavButtonProps) => {
       </AlignedButton>
     </li>
   ) : (
-    <StyledHamburgerNavLi className={className}>
-      <button onClick={onClick}>{text}</button>
-    </StyledHamburgerNavLi>
+    <NavButtonHamburger text={text} onClick={onClick} className={className} />
   );
 };
 

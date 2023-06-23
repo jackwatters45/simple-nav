@@ -1,6 +1,7 @@
 import { useModal, useModalParams } from 'react-hook-modal-pure';
 import { ReactNode } from 'react';
 import { keyframes, styled } from 'styled-components';
+import { CloseModalProvider } from '../../../context/CloseModalContext';
 
 const slideIn = keyframes`
   from {
@@ -19,6 +20,11 @@ export const MenuBackground = styled.nav`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  z-index: 100;
+
+  body {
+    overflow: hidden;
+  }
 
   background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
   animation: ${slideIn} 0.4s ease-in-out;
@@ -46,11 +52,14 @@ interface Props {
 
 const HamburgerModal = ({ useModalParams, children, className }: Props) => {
   const modalProps = useModal(useModalParams);
+  const { closeModal } = useModalParams;
 
   return (
     <MenuBackground {...modalProps} className={className}>
       <MenuContentContainer>
-        <MenuContentHamburger>{children}</MenuContentHamburger>
+        <CloseModalProvider value={closeModal}>
+          <MenuContentHamburger>{children}</MenuContentHamburger>
+        </CloseModalProvider>
       </MenuContentContainer>
     </MenuBackground>
   );

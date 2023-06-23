@@ -1,8 +1,9 @@
-import { useWindowWidth } from '../../context/WindowWidthContext';
-import { AlignComponent, StyledHamburgerNavLi } from '../../styles/sharedComponents';
+import { useWindowWidth } from '../../../context/WindowWidthContext';
+import { AlignComponent } from '../../../styles/sharedComponents';
 import { NavLink as Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { ReactNode } from 'react';
+import NavLinkHamburger from './NavLinkHamburger';
 
 const StyledLink = styled(Link)`
   padding: 0;
@@ -31,9 +32,7 @@ const NavLink = ({ text, to, icon, className }: NavLinkProps) => {
       </StyledNavLi>
     </StyledLink>
   ) : (
-    <StyledHamburgerNavLi className={className}>
-      <StyledLink to={to}>{text}</StyledLink>
-    </StyledHamburgerNavLi>
+    <NavLinkHamburger text={text} to={to} className={className} />
   );
 };
 
