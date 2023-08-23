@@ -5,13 +5,14 @@ import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-const HamburgerMenu = ({ children }: Props) => {
+const HamburgerMenu = ({ children, className }: Props) => {
   const { isModalVisible, buttonProps, useModalParams } = useModalTrigger();
 
   return (
-    <div>
+    <div className={`${className} hamburger-menu`}>
       <MenuButton buttonProps={buttonProps} />
       {isModalVisible && (
         <HamburgerModal useModalParams={useModalParams}>{children}</HamburgerModal>

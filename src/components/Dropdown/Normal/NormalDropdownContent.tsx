@@ -6,11 +6,10 @@ const Container = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  min-width: 100px;
 
   background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
   border-radius: 3px;
-  padding: 4px;
+  padding: 0.5rem 1rem;
   font-size: 0.9rem;
   margin-top: 4px;
   ${(props) => props?.theme?.shadow};
@@ -26,7 +25,7 @@ const NormalDropdownContent = ({ useModalParams, children, className }: Props) =
   const modalProps = useModal(useModalParams);
 
   return (
-    <Container {...modalProps} className={className}>
+    <Container {...modalProps} className={`${className} normal-dropdown-content`}>
       {children}
     </Container>
   );

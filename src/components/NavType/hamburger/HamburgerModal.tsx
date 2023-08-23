@@ -47,15 +47,14 @@ const MenuContentHamburger = styled.div`
 interface Props {
   useModalParams: useModalParams;
   children: ReactNode;
-  className?: string;
 }
 
-const HamburgerModal = ({ useModalParams, children, className }: Props) => {
+const HamburgerModal = ({ useModalParams, children }: Props) => {
   const modalProps = useModal(useModalParams);
   const { closeModal } = useModalParams;
 
   return (
-    <MenuBackground {...modalProps} className={className}>
+    <MenuBackground {...modalProps} className="hamburger-modal">
       <MenuContentContainer>
         <CloseModalProvider value={closeModal}>
           <MenuContentHamburger>{children}</MenuContentHamburger>

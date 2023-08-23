@@ -4,12 +4,13 @@ import NavType from '../NavType/NavType';
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-const Nav = ({ children }: Props) => {
+const Nav = ({ children, className }: Props) => {
   return (
     <WindowWidthProvider>
-      <NavType>{children}</NavType>
+      <NavType className={className}>{children}</NavType>
     </WindowWidthProvider>
   );
 };

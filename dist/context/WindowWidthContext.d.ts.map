@@ -1,0 +1,1 @@
+{"version":3,"file":"WindowWidthContext.d.ts","sourceRoot":"","sources":["../../src/context/WindowWidthContext.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAkD,SAAS,EAAE,MAAM,OAAO,CAAC;AAOlF,UAAU,KAAK;IACb,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,QAAQ,EAAE,SAAS,CAAC;CACrB;AAED,eAAO,MAAM,mBAAmB,4BAAmC,KAAK,gBAkBvE,CAAC;AAEF,eAAO,MAAM,cAAc,eAQ1B,CAAC"}

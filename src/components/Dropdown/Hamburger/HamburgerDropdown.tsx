@@ -6,14 +6,15 @@ import HamburgerDropdownButton from './HamburgerDropdownButton';
 interface Props {
   children: ReactNode;
   buttonOptions?: ButtonOptions;
+  className?: string;
 }
 
-const HamburgerDropdown = ({ children, buttonOptions }: Props) => {
+const HamburgerDropdown = ({ children, buttonOptions, className }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleIsOpen = () => setIsOpen((prev) => !prev);
 
   return (
-    <div>
+    <div className={`${className} hamburger-dropdown`}>
       <HamburgerDropdownButton
         isOpen={isOpen}
         toggleIsOpen={toggleIsOpen}

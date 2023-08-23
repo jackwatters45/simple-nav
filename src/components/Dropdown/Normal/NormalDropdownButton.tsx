@@ -16,7 +16,7 @@ const NormalDropdownButton = ({
   arrowSize = '.5rem',
 }: Props) => {
   return (
-    <AlignedButton {...buttonProps} className={className}>
+    <AlignedButton {...buttonProps} className={`${className} normal-dropdown-button`}>
       {icon && icon}
       {includeText && <span>{text}</span>}
       {includeArrow && <MenuDownIcon size={arrowSize} />}

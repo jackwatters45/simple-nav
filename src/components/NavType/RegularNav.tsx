@@ -4,16 +4,20 @@ import { ReactNode } from 'react';
 export const RegularNavContainer = styled.div`
   display: flex;
   align-items: center;
-
   gap: 2vw;
 `;
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-const RegularNav = ({ children }: Props) => {
-  return <RegularNavContainer>{children}</RegularNavContainer>;
+const RegularNav = ({ children, className }: Props) => {
+  return (
+    <RegularNavContainer className={`${className} regular-nav`}>
+      {children}
+    </RegularNavContainer>
+  );
 };
 
 export default RegularNav;

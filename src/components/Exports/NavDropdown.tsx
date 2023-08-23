@@ -7,15 +7,20 @@ import { ReactNode } from 'react';
 interface Props {
   children: ReactNode;
   buttonOptions?: ButtonOptions;
+  className?: string;
 }
 
-const NavDropdown = ({ children, buttonOptions }: Props) => {
+const NavDropdown = ({ children, buttonOptions, className }: Props) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
-    <NormalDropdown buttonOptions={buttonOptions}>{children}</NormalDropdown>
+    <NormalDropdown buttonOptions={buttonOptions} className={className}>
+      {children}
+    </NormalDropdown>
   ) : (
-    <HamburgerDropdown buttonOptions={buttonOptions}>{children}</HamburgerDropdown>
+    <HamburgerDropdown buttonOptions={buttonOptions} className={className}>
+      {children}
+    </HamburgerDropdown>
   );
 };
 

@@ -5,15 +5,16 @@ import { useWindowWidth } from '../../context/WindowWidthContext';
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-const NavType = ({ children }: Props) => {
+const NavType = ({ children, className }: Props) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
-    <RegularNav>{children}</RegularNav>
+    <RegularNav className={className}>{children}</RegularNav>
   ) : (
-    <HamburgerMenu>{children}</HamburgerMenu>
+    <HamburgerMenu className={className}>{children}</HamburgerMenu>
   );
 };
 

@@ -30,7 +30,7 @@ interface Props {
 
 const HamburgerDropdownContent = ({ isOpen, className, children }: Props) => {
   return (
-    <CollapsibleList open={isOpen} className={className}>
+    <CollapsibleList open={isOpen} className={`${className} hamburger-dropdown-content`}>
       <ul>{children}</ul>
     </CollapsibleList>
   );

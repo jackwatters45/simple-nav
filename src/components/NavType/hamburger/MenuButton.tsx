@@ -4,12 +4,11 @@ import MenuIcon from '../../../assets/MenuIcon';
 
 interface Props {
   buttonProps?: ButtonProps;
-  className?: string;
 }
 
-const MenuButton = ({ buttonProps, className }: Props) => {
+const MenuButton = ({ buttonProps }: Props) => {
   return (
-    <AlignedButton {...buttonProps} className={className}>
+    <AlignedButton {...buttonProps} className="hamburger-menu-button">
       <MenuIcon />
     </AlignedButton>
   );
