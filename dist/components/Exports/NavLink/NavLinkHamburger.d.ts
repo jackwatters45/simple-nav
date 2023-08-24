@@ -1,6 +1,6 @@
 /// <reference types="react" />
 interface NavLinkProps {
-    text: string;
+    text?: string;
     to: string;
     className?: string;
 }

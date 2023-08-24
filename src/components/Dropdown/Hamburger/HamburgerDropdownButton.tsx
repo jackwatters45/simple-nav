@@ -15,10 +15,10 @@ interface Props extends ButtonOptions {
   toggleIsOpen: () => void;
 }
 
-const HamburgerDropdownButton = ({ className, text, isOpen, toggleIsOpen }: Props) => {
+const HamburgerDropdownButton = ({ text, isOpen, toggleIsOpen }: Props) => {
   return (
     <StyledHamburgerDropdownButton
-      className={`${className} hamburger-dropdown-button`}
+      className={`hamburger-dropdown-button`}
       onClick={toggleIsOpen}
     >
       {isOpen ? <MenuDownIcon /> : <MenuRightIcon />}

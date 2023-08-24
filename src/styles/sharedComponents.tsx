@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 
 export const AlignComponent = css`
@@ -7,11 +8,20 @@ export const AlignComponent = css`
   cursor: pointer;
 `;
 
-export const AlignedButton = styled.button`
+export const AlignedDiv = styled.div`
   ${AlignComponent}
 `;
 
-export const StyledHamburgerNavLi = styled.li`
+export const AlignedButton = styled.button`
+  ${AlignComponent}
+  background-color: transparent;
+`;
+
+export const AlignedLink = styled(NavLink)`
+  ${AlignComponent}
+`;
+
+export const StyledHamburgerNavDiv = styled.div`
   margin-left: 2rem;
   font-size: 2rem;
   font-weight: 700;

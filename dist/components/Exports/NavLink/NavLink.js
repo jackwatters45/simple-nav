@@ -1,18 +1,15 @@
 import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
 import { useWindowWidth } from '../../../context/WindowWidthContext';
-import { AlignComponent } from '../../../styles/sharedComponents';
-import { NavLink as Link } from 'react-router-dom';
+import { AlignedButton, AlignedLink } from '../../../styles/sharedComponents';
 import { styled } from 'styled-components';
 import NavLinkHamburger from './NavLinkHamburger';
-const StyledLink = styled(Link) `
+const StyledLink = styled(AlignedLink) `
   padding: 0;
   margin: 0;
+  line-height: ${({ isIcon }) => (isIcon ? '0' : 'normal')};
 `;
-export const StyledNavLi = styled.li `
-  ${AlignComponent}
-`;
-const NavLink = ({ text, to, icon, className }) => {
+const NavLink = ({ text, showText = true, to, icon, className }) => {
     const isNormalView = useWindowWidth();
-    return isNormalView ? (_jsx(StyledLink, { to: to, children: _jsxs(StyledNavLi, { className: className, children: [icon && icon, text] }) })) : (_jsx(NavLinkHamburger, { text: text, to: to, className: className }));
+    return isNormalView ? (_jsx("li", { children: _jsx(AlignedButton, { children: _jsxs(StyledLink, { to: to, isIcon: !!icon, className: className, children: [icon && icon, showText && text] }) }) })) : (_jsx(NavLinkHamburger, { text: text, to: to, className: className }));
 };
 export default NavLink;

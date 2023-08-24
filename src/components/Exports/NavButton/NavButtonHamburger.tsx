@@ -1,4 +1,4 @@
-import { StyledHamburgerNavLi } from '../../../styles/sharedComponents';
+import { StyledHamburgerNavDiv } from '../../../styles/sharedComponents';
 import { useCloseModal } from '../../../context/CloseModalContext';
 
 interface NavButtonProps {
@@ -11,9 +11,9 @@ const NavButtonHamburger = ({ text, onClick, className }: NavButtonProps) => {
   const onClickHamburger = useCloseModal(onClick);
 
   return (
-    <StyledHamburgerNavLi className={className}>
+    <StyledHamburgerNavDiv className={className}>
       <button onClick={onClickHamburger}>{text}</button>
-    </StyledHamburgerNavLi>
+    </StyledHamburgerNavDiv>
   );
 };
 

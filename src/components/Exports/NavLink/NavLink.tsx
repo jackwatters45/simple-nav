@@ -1,36 +1,35 @@
 import { useWindowWidth } from '../../../context/WindowWidthContext';
-import { AlignComponent } from '../../../styles/sharedComponents';
-import { NavLink as Link } from 'react-router-dom';
+import { AlignedButton, AlignedLink } from '../../../styles/sharedComponents';
 import { styled } from 'styled-components';
 import { ReactNode } from 'react';
 import NavLinkHamburger from './NavLinkHamburger';
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(AlignedLink)<{ isIcon: boolean }>`
   padding: 0;
   margin: 0;
-`;
-
-export const StyledNavLi = styled.li`
-  ${AlignComponent}
+  line-height: ${({ isIcon }) => (isIcon ? '0' : 'normal')};
 `;
 
 interface NavLinkProps {
   text: string;
+  showText?: boolean;
   to: string;
   icon?: ReactNode;
   className?: string;
 }
 
-const NavLink = ({ text, to, icon, className }: NavLinkProps) => {
+const NavLink = ({ text, showText = true, to, icon, className }: NavLinkProps) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
-    <StyledLink to={to}>
-      <StyledNavLi className={className}>
-        {icon && icon}
-        {text}
-      </StyledNavLi>
-    </StyledLink>
+    <li>
+      <AlignedButton>
+        <StyledLink to={to} isIcon={!!icon} className={className}>
+          {icon && icon}
+          {showText && text}
+        </StyledLink>
+      </AlignedButton>
+    </li>
   ) : (
     <NavLinkHamburger text={text} to={to} className={className} />
   );

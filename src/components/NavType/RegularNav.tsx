@@ -1,11 +1,4 @@
-import { styled } from 'styled-components';
 import { ReactNode } from 'react';
-
-export const RegularNavContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2vw;
-`;
 
 interface Props {
   children: ReactNode;
@@ -13,11 +6,7 @@ interface Props {
 }
 
 const RegularNav = ({ children, className }: Props) => {
-  return (
-    <RegularNavContainer className={`${className} regular-nav`}>
-      {children}
-    </RegularNavContainer>
-  );
+  return <div className={`${className} regular-nav`}>{children}</div>;
 };
 
 export default RegularNav;

@@ -18,14 +18,13 @@ const Container = styled.div`
 interface Props {
   useModalParams: useModalParams;
   children: ReactNode;
-  className?: string;
 }
 
-const NormalDropdownContent = ({ useModalParams, children, className }: Props) => {
+const NormalDropdownContent = ({ useModalParams, children }: Props) => {
   const modalProps = useModal(useModalParams);
 
   return (
-    <Container {...modalProps} className={`${className} normal-dropdown-content`}>
+    <Container {...modalProps} className={` normal-dropdown-content`}>
       {children}
     </Container>
   );

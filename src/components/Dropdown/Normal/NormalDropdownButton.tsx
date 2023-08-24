@@ -8,15 +8,14 @@ interface Props extends ButtonOptions {
 
 const NormalDropdownButton = ({
   buttonProps,
-  className,
   icon,
   text,
-  includeText = true,
+  includeText = false,
   includeArrow = true,
   arrowSize = '.5rem',
 }: Props) => {
   return (
-    <AlignedButton {...buttonProps} className={`${className} normal-dropdown-button`}>
+    <AlignedButton {...buttonProps} className={`normal-dropdown-button`}>
       {icon && icon}
       {includeText && <span>{text}</span>}
       {includeArrow && <MenuDownIcon size={arrowSize} />}

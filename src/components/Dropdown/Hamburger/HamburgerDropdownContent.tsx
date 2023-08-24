@@ -9,13 +9,12 @@ const CollapsibleList = styled.div<CollapsibleListProps>`
   max-height: ${(props) => (props.open ? '500px' : '0')};
   overflow: hidden;
   transition: ${(props) => (props.open ? 'max-height 0.3s ease-in-out' : 'none')};
-  ul {
-    li {
-      font-size: 1.5rem;
-      margin-left: 0rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
+
+  button {
+    font-size: 1.5rem;
+    margin-left: 0rem;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   font-size: 2rem;
@@ -25,13 +24,12 @@ const CollapsibleList = styled.div<CollapsibleListProps>`
 interface Props {
   isOpen: boolean;
   children: ReactNode;
-  className?: string;
 }
 
-const HamburgerDropdownContent = ({ isOpen, className, children }: Props) => {
+const HamburgerDropdownContent = ({ isOpen, children }: Props) => {
   return (
-    <CollapsibleList open={isOpen} className={`${className} hamburger-dropdown-content`}>
-      <ul>{children}</ul>
+    <CollapsibleList open={isOpen} className={`hamburger-dropdown-content`}>
+      {children}
     </CollapsibleList>
   );
 };
