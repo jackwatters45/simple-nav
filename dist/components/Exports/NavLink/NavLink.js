@@ -10,6 +10,6 @@ const StyledLink = styled(AlignedLink) `
 `;
 const NavLink = ({ text, showText = true, to, icon, className }) => {
     const isNormalView = useWindowWidth();
-    return isNormalView ? (_jsx("li", { children: _jsx(AlignedButton, { children: _jsxs(StyledLink, { to: to, isIcon: !!icon, className: className, children: [icon && icon, showText && text] }) }) })) : (_jsx(NavLinkHamburger, { text: text, to: to, className: className }));
+    return isNormalView ? (_jsx("li", { className: className, children: _jsx(AlignedButton, { children: _jsxs(StyledLink, { to: to, isIcon: !!icon, children: [icon && icon, showText && text] }) }) })) : (_jsx(NavLinkHamburger, { text: text, to: to, className: className }));
 };
 export default NavLink;

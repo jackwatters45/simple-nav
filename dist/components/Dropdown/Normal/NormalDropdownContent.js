@@ -5,6 +5,7 @@ const Container = styled.div `
   position: absolute;
   display: flex;
   flex-direction: column;
+  z-index: 100;
 
   background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
   border-radius: 3px;
@@ -13,8 +14,11 @@ const Container = styled.div `
   margin-top: 4px;
   ${(props) => props?.theme?.shadow};
 `;
-const NormalDropdownContent = ({ useModalParams, children, className }) => {
-    const modalProps = useModal(useModalParams);
-    return (_jsx(Container, { ...modalProps, className: `${className} normal-dropdown-content`, children: children }));
+const NormalDropdownContent = ({ useModalParams, children }) => {
+    const modalProps = useModal({
+        ...useModalParams,
+        options: { rightPositionDistance: 16 },
+    });
+    return (_jsx(Container, { ...modalProps, className: `normal-dropdown-content`, children: children }));
 };
 export default NormalDropdownContent;

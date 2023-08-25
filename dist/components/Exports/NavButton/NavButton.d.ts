@@ -6,6 +6,6 @@ interface NavButtonProps {
     iconSize?: number;
     className?: string;
 }
-declare const NavButton: ({ text, onClick, icon, className }: NavButtonProps) => JSX.Element;
+declare const NavButton: ({ text, onClick, icon, className }: NavButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default NavButton;
 //# sourceMappingURL=NavButton.d.ts.map

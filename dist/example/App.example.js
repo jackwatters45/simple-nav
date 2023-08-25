@@ -5,9 +5,6 @@ import Nav from '../components/Exports/Nav';
 import { styled } from 'styled-components';
 import NavLink from '../components/Exports/NavLink/NavLink';
 import NavDropdown from '../components/Exports/NavDropdown';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import NavButton from '../components/Exports/NavButton/NavButton';
 const StyledContainer = styled.div `
   display: flex;
@@ -25,6 +22,6 @@ const App = () => {
     const [user, setUser] = useState(true);
     const handleToggleUser = () => setUser((prev) => !prev);
     const logout = () => console.log('logout');
-    return (_jsxs(StyledContainer, { children: [_jsx("button", { onClick: handleToggleUser, children: "Toggle user" }), _jsx(Nav, { children: user ? (_jsxs(_Fragment, { children: [_jsxs(NavDropdown, { buttonOptions: { text: 'Admin', icon: _jsx(AdminPanelSettingsIcon, {}) }, children: [_jsx(NavLink, { to: "/admin/users", text: "View Users" }), _jsx(NavLink, { to: "/admin/posts", text: "View Posts" }), _jsx(NavLink, { to: "/admin/topics", text: "View Topics" })] }), _jsx(NavLink, { to: "/write", text: "Write", icon: _jsx(EditNoteIcon, {}) }), _jsxs(NavDropdown, { buttonOptions: { text: 'Account', icon: _jsx(AccountBoxIcon, {}) }, children: [_jsx(NavLink, { to: "/profile", text: "Profile" }), _jsx(NavButton, { onClick: logout, text: "Logout" })] })] })) : (_jsxs(_Fragment, { children: [_jsx(NavLink, { to: "/write", text: "Write", icon: _jsx(EditNoteIcon, {}) }), _jsx(NavLink, { to: "/signup", text: "Sign up" }), _jsx(NavLink, { to: "/login", text: "Log in" })] })) })] }));
+    return (_jsxs(StyledContainer, { children: [_jsx("button", { onClick: handleToggleUser, children: "Toggle user" }), _jsx(Nav, { children: user ? (_jsxs(_Fragment, { children: [_jsxs(NavDropdown, { buttonOptions: { text: 'Admin' }, children: [_jsx(NavLink, { to: "/admin/users", text: "View Users" }), _jsx(NavLink, { to: "/admin/posts", text: "View Posts" }), _jsx(NavLink, { to: "/admin/topics", text: "View Topics" })] }), _jsx(NavLink, { to: "/write", text: "Write" }), _jsxs(NavDropdown, { buttonOptions: { text: 'Account' }, children: [_jsx(NavLink, { to: "/profile", text: "Profile" }), _jsx(NavButton, { onClick: logout, text: "Logout" })] })] })) : (_jsxs(_Fragment, { children: [_jsx(NavLink, { to: "/write", text: "Write" }), _jsx(NavLink, { to: "/signup", text: "Sign up" }), _jsx(NavLink, { to: "/login", text: "Log in" })] })) })] }));
 };
 export default App;

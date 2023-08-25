@@ -40,7 +40,10 @@ const MenuContentHamburger = styled.div `
   align-items: left;
 `;
 const HamburgerModal = ({ useModalParams, children }) => {
-    const modalProps = useModal(useModalParams);
+    const modalProps = useModal({
+        ...useModalParams,
+        options: { rightPositionDistance: 16 },
+    });
     const { closeModal } = useModalParams;
     return (_jsx(MenuBackground, { ...modalProps, className: "hamburger-modal", children: _jsx(MenuContentContainer, { children: _jsx(CloseModalProvider, { value: closeModal, children: _jsx(MenuContentHamburger, { children: children }) }) }) }));
 };

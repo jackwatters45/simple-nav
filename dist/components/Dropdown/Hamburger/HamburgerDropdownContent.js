@@ -4,6 +4,7 @@ const CollapsibleList = styled.div `
   max-height: ${(props) => (props.open ? '500px' : '0')};
   overflow: hidden;
   transition: ${(props) => (props.open ? 'max-height 0.3s ease-in-out' : 'none')};
+  z-index: 100;
 
   button {
     font-size: 1.5rem;
@@ -15,7 +16,7 @@ const CollapsibleList = styled.div `
   font-size: 2rem;
   font-weight: 700;
 `;
-const HamburgerDropdownContent = ({ isOpen, className, children }) => {
-    return (_jsx(CollapsibleList, { open: isOpen, className: `${className} hamburger-dropdown-content`, children: children }));
+const HamburgerDropdownContent = ({ isOpen, children }) => {
+    return (_jsx(CollapsibleList, { open: isOpen, className: `hamburger-dropdown-content`, children: children }));
 };
 export default HamburgerDropdownContent;

@@ -22,9 +22,9 @@ const NavLink = ({ text, showText = true, to, icon, className }: NavLinkProps) =
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
-    <li>
+    <li className={className}>
       <AlignedButton>
-        <StyledLink to={to} isIcon={!!icon} className={className}>
+        <StyledLink to={to} isIcon={!!icon}>
           {icon && icon}
           {showText && text}
         </StyledLink>

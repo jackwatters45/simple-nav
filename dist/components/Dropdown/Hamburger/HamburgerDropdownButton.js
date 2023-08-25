@@ -8,7 +8,7 @@ const StyledHamburgerDropdownButton = styled(AlignedButton) `
   font-weight: 700;
   gap: 0.5rem;
 `;
-const HamburgerDropdownButton = ({ className, text, isOpen, toggleIsOpen }) => {
-    return (_jsxs(StyledHamburgerDropdownButton, { className: `${className} hamburger-dropdown-button`, onClick: toggleIsOpen, children: [isOpen ? _jsx(MenuDownIcon, {}) : _jsx(MenuRightIcon, {}), text] }));
+const HamburgerDropdownButton = ({ text, isOpen, toggleIsOpen }) => {
+    return (_jsxs(StyledHamburgerDropdownButton, { className: `hamburger-dropdown-button`, onClick: toggleIsOpen, children: [isOpen ? _jsx(MenuDownIcon, {}) : _jsx(MenuRightIcon, {}), text] }));
 };
 export default HamburgerDropdownButton;

@@ -6,6 +6,6 @@ interface NavLinkProps {
     icon?: ReactNode;
     className?: string;
 }
-declare const NavLink: ({ text, showText, to, icon, className }: NavLinkProps) => JSX.Element;
+declare const NavLink: ({ text, showText, to, icon, className }: NavLinkProps) => import("react/jsx-runtime").JSX.Element;
 export default NavLink;
 //# sourceMappingURL=NavLink.d.ts.map

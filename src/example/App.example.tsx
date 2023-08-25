@@ -4,9 +4,6 @@ import Nav from '../components/Exports/Nav';
 import { styled } from 'styled-components';
 import NavLink from '../components/Exports/NavLink/NavLink';
 import NavDropdown from '../components/Exports/NavDropdown';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import NavButton from '../components/Exports/NavButton/NavButton';
 
 const StyledContainer = styled.div`
@@ -34,22 +31,20 @@ const App = () => {
       <Nav>
         {user ? (
           <>
-            <NavDropdown
-              buttonOptions={{ text: 'Admin', icon: <AdminPanelSettingsIcon /> }}
-            >
+            <NavDropdown buttonOptions={{ text: 'Admin' }}>
               <NavLink to="/admin/users" text="View Users" />
               <NavLink to="/admin/posts" text="View Posts" />
               <NavLink to="/admin/topics" text="View Topics" />
             </NavDropdown>
-            <NavLink to="/write" text="Write" icon={<EditNoteIcon />} />
-            <NavDropdown buttonOptions={{ text: 'Account', icon: <AccountBoxIcon /> }}>
+            <NavLink to="/write" text="Write" />
+            <NavDropdown buttonOptions={{ text: 'Account' }}>
               <NavLink to="/profile" text="Profile" />
               <NavButton onClick={logout} text="Logout" />
             </NavDropdown>
           </>
         ) : (
           <>
-            <NavLink to="/write" text="Write" icon={<EditNoteIcon />} />
+            <NavLink to="/write" text="Write" />
             <NavLink to="/signup" text="Sign up" />
             <NavLink to="/login" text="Log in" />
           </>

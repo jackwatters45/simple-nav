@@ -18,7 +18,7 @@ const NavButton = ({ text, onClick, icon, className }: NavButtonProps) => {
     <li>
       <AlignedButton className={className} onClick={onClick}>
         {icon && icon}
-        {text}
+        <p>{text}</p>
       </AlignedButton>
     </li>
   ) : (

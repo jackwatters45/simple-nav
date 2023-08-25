@@ -6,6 +6,7 @@ const Container = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
+  z-index: 100;
 
   background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
   border-radius: 3px;
@@ -21,10 +22,13 @@ interface Props {
 }
 
 const NormalDropdownContent = ({ useModalParams, children }: Props) => {
-  const modalProps = useModal(useModalParams);
+  const modalProps = useModal({
+    ...useModalParams,
+    options: { rightPositionDistance: 16 },
+  });
 
   return (
-    <Container {...modalProps} className={` normal-dropdown-content`}>
+    <Container {...modalProps} className={`normal-dropdown-content`}>
       {children}
     </Container>
   );

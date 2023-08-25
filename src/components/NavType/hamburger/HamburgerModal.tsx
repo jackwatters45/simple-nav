@@ -50,7 +50,10 @@ interface Props {
 }
 
 const HamburgerModal = ({ useModalParams, children }: Props) => {
-  const modalProps = useModal(useModalParams);
+  const modalProps = useModal({
+    ...useModalParams,
+    options: { rightPositionDistance: 16 },
+  });
   const { closeModal } = useModalParams;
 
   return (
