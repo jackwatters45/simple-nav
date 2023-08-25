@@ -13,7 +13,7 @@ const StyledHamburgerDropdownButton = (0, styled_components_1.styled)(sharedComp
   font-weight: 700;
   gap: 0.5rem;
 `;
-const HamburgerDropdownButton = ({ text, isOpen, toggleIsOpen }) => {
-    return ((0, jsx_runtime_1.jsxs)(StyledHamburgerDropdownButton, { className: `hamburger-dropdown-button`, onClick: toggleIsOpen, children: [isOpen ? (0, jsx_runtime_1.jsx)(MenuDownIcon_1.default, {}) : (0, jsx_runtime_1.jsx)(MenuRightIcon_1.default, {}), text] }));
+const HamburgerDropdownButton = ({ text, isOpen, toggleIsOpen, dataTestid }) => {
+    return ((0, jsx_runtime_1.jsxs)(StyledHamburgerDropdownButton, { className: `hamburger-dropdown-button`, onClick: toggleIsOpen, "data-testid": dataTestid, children: [isOpen ? (0, jsx_runtime_1.jsx)(MenuDownIcon_1.default, {}) : (0, jsx_runtime_1.jsx)(MenuRightIcon_1.default, {}), text] }));
 };
 exports.default = HamburgerDropdownButton;

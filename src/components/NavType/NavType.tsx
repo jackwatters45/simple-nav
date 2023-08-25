@@ -6,15 +6,20 @@ import { useWindowWidth } from '../../context/WindowWidthContext';
 interface Props {
   children: ReactNode;
   className?: string;
+  dataTestid?: string;
 }
 
-const NavType = ({ children, className }: Props) => {
+const NavType = ({ children, className, dataTestid }: Props) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
-    <RegularNav className={className}>{children}</RegularNav>
+    <RegularNav className={className} dataTestid={dataTestid}>
+      {children}
+    </RegularNav>
   ) : (
-    <HamburgerMenu className={className}>{children}</HamburgerMenu>
+    <HamburgerMenu className={className} dataTestid={dataTestid}>
+      {children}
+    </HamburgerMenu>
   );
 };
 

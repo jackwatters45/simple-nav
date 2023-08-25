@@ -12,14 +12,15 @@ interface NavLinkProps {
   text?: string;
   to: string;
   className?: string;
+  dataTestid?: string;
 }
 
-const NavLinkHamburger = ({ text, to, className }: NavLinkProps) => {
+const NavLinkHamburger = ({ text, to, className, dataTestid }: NavLinkProps) => {
   const onClickHamburger = useCloseModal();
 
   return (
     <StyledHamburgerNavDiv className={className}>
-      <StyledLink onClick={onClickHamburger} to={to}>
+      <StyledLink onClick={onClickHamburger} to={to} data-testid={dataTestid}>
         {text}
       </StyledLink>
     </StyledHamburgerNavDiv>

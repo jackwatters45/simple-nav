@@ -5,3 +5,5 @@ dist/
 vite.config.ts
 types/
 **/*.d.ts
+src/example/
+```

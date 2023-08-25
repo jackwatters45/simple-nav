@@ -7,9 +7,10 @@ interface Props {
   children: ReactNode;
   buttonOptions?: ButtonOptions;
   className?: string;
+  dataTestid?: string;
 }
 
-const HamburgerDropdown = ({ children, buttonOptions, className }: Props) => {
+const HamburgerDropdown = ({ children, buttonOptions, className, dataTestid }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleIsOpen = () => setIsOpen((prev) => !prev);
 
@@ -18,6 +19,7 @@ const HamburgerDropdown = ({ children, buttonOptions, className }: Props) => {
       <HamburgerDropdownButton
         isOpen={isOpen}
         toggleIsOpen={toggleIsOpen}
+        data-testid={dataTestid}
         {...buttonOptions}
       />
       <HamburgerDropdownContent isOpen={isOpen}>{children}</HamburgerDropdownContent>

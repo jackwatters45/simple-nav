@@ -1,7 +1,7 @@
 import { useWindowWidth } from '../../../context/WindowWidthContext';
 import { AlignedButton, AlignedLink } from '../../../styles/sharedComponents';
 import { styled } from 'styled-components';
-import { ReactNode } from 'react';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
 import NavLinkHamburger from './NavLinkHamburger';
 
 const StyledLink = styled(AlignedLink)<{ $isIcon: boolean }>`
@@ -10,28 +10,53 @@ const StyledLink = styled(AlignedLink)<{ $isIcon: boolean }>`
   line-height: ${({ $isIcon }) => ($isIcon ? '0' : 'normal')};
 `;
 
-interface NavLinkProps {
+interface CustomNavLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   text: string;
   showText?: boolean;
   to: string;
   icon?: ReactNode;
   className?: string;
+  dataTestid?: string;
+  isActive?: boolean;
+  end?: boolean;
 }
 
-const NavLink = ({ text, showText = true, to, icon, className }: NavLinkProps) => {
+const NavLink = ({
+  text,
+  showText = true,
+  to,
+  icon,
+  className,
+  dataTestid,
+  isActive,
+  end = false,
+  ...props
+}: CustomNavLinkProps) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
     <li className={className}>
       <AlignedButton>
-        <StyledLink to={to} $isIcon={!!icon}>
+        <StyledLink
+          to={to}
+          $isIcon={!!icon}
+          data-testid={dataTestid}
+          className={({ isActive: builtInActive, isPending }) => {
+            console.log('builtInActive', builtInActive);
+            console.log('isPending', isPending);
+
+            return isActive ? 'active' : '';
+          }}
+          end={end}
+          {...props}
+        >
           {icon && icon}
-          {showText && text}
+          {showText && <span>{text}</span>}
         </StyledLink>
       </AlignedButton>
     </li>
   ) : (
-    <NavLinkHamburger text={text} to={to} className={className} />
+    <NavLinkHamburger text={text} to={to} className={className} dataTestid={dataTestid} />
   );
 };
 

@@ -4,6 +4,7 @@ import MenuDownIcon from '../../../assets/MenuDownIcon';
 
 interface Props extends ButtonOptions {
   buttonProps: ButtonProps;
+  dataTestid?: string;
 }
 
 const NormalDropdownButton = ({
@@ -13,9 +14,14 @@ const NormalDropdownButton = ({
   includeText = false,
   includeArrow = true,
   arrowSize = '.5rem',
+  dataTestid,
 }: Props) => {
   return (
-    <AlignedButton {...buttonProps} className={`normal-dropdown-button`}>
+    <AlignedButton
+      {...buttonProps}
+      className={`normal-dropdown-button`}
+      data-testid={dataTestid}
+    >
       {icon && icon}
       {includeText && <span>{text}</span>}
       {includeArrow && <MenuDownIcon size={arrowSize} />}

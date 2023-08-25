@@ -9,20 +9,26 @@ interface NavButtonProps {
   icon?: ReactNode;
   iconSize?: number;
   className?: string;
+  dataTestid?: string;
 }
 
-const NavButton = ({ text, onClick, icon, className }: NavButtonProps) => {
+const NavButton = ({ text, onClick, icon, className, dataTestid }: NavButtonProps) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
     <li>
-      <AlignedButton className={className} onClick={onClick}>
+      <AlignedButton className={className} onClick={onClick} data-testid={dataTestid}>
         {icon && icon}
-        <p>{text}</p>
+        <span>{text}</span>
       </AlignedButton>
     </li>
   ) : (
-    <NavButtonHamburger text={text} onClick={onClick} className={className} />
+    <NavButtonHamburger
+      text={text}
+      onClick={onClick}
+      className={className}
+      dataTestid={dataTestid}
+    />
   );
 };
 

@@ -6,13 +6,16 @@ interface NavButtonProps {
   onClick: () => void;
   iconSize?: number;
   className?: string;
+  dataTestid?: string;
 }
-const NavButtonHamburger = ({ text, onClick, className }: NavButtonProps) => {
+const NavButtonHamburger = ({ text, onClick, className, dataTestid }: NavButtonProps) => {
   const onClickHamburger = useCloseModal(onClick);
 
   return (
     <StyledHamburgerNavDiv className={className}>
-      <button onClick={onClickHamburger}>{text}</button>
+      <button onClick={onClickHamburger} data-testid={dataTestid}>
+        {text}
+      </button>
     </StyledHamburgerNavDiv>
   );
 };

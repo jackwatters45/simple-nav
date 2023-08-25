@@ -8,17 +8,26 @@ interface Props {
   children: ReactNode;
   buttonOptions?: ButtonOptions;
   className?: string;
+  dataTestid?: string;
 }
 
-const NavDropdown = ({ children, buttonOptions, className }: Props) => {
+const NavDropdown = ({ children, buttonOptions, className, dataTestid }: Props) => {
   const isNormalView = useWindowWidth();
 
   return isNormalView ? (
-    <NormalDropdown buttonOptions={buttonOptions} className={className}>
+    <NormalDropdown
+      buttonOptions={buttonOptions}
+      className={className}
+      dataTestid={dataTestid}
+    >
       {children}
     </NormalDropdown>
   ) : (
-    <HamburgerDropdown buttonOptions={buttonOptions} className={className}>
+    <HamburgerDropdown
+      buttonOptions={buttonOptions}
+      className={className}
+      dataTestid={dataTestid}
+    >
       {children}
     </HamburgerDropdown>
   );
