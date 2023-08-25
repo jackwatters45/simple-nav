@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ESNext",
+    "module": "CommonJS",
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    // "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -27,6 +27,5 @@
     "typeRoots": ["types", "./node_modules/@types"]
   },
   "include": ["src", "types"],
-  "exclude": ["node_modules, src/example"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["src/example"]
 }

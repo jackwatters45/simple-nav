@@ -1,7 +1,12 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-import { WindowWidthProvider } from '../../context/WindowWidthContext';
-import NavType from '../NavType/NavType';
-const Nav = ({ children, className }) => {
-    return (_jsx(WindowWidthProvider, { children: _jsx(NavType, { className: className, children: children }) }));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-export default Nav;
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const WindowWidthContext_1 = require("../../context/WindowWidthContext");
+const NavType_1 = __importDefault(require("../NavType/NavType"));
+const Nav = ({ children, className }) => {
+    return ((0, jsx_runtime_1.jsx)(WindowWidthContext_1.WindowWidthProvider, { children: (0, jsx_runtime_1.jsx)(NavType_1.default, { className: className, children: children }) }));
+};
+exports.default = Nav;

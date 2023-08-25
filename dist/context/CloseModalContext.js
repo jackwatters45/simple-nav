@@ -1,8 +1,11 @@
-import { createContext, useContext } from 'react';
-export const CloseModalContext = createContext(undefined);
-export const CloseModalProvider = CloseModalContext.Provider;
-export const useCloseModal = (previousAction) => {
-    const closeModal = useContext(CloseModalContext);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useCloseModal = exports.CloseModalProvider = exports.CloseModalContext = void 0;
+const react_1 = require("react");
+exports.CloseModalContext = (0, react_1.createContext)(undefined);
+exports.CloseModalProvider = exports.CloseModalContext.Provider;
+const useCloseModal = (previousAction) => {
+    const closeModal = (0, react_1.useContext)(exports.CloseModalContext);
     if (closeModal === undefined) {
         throw new Error('useCloseModal must be used within a CloseModalProvider');
     }
@@ -12,3 +15,4 @@ export const useCloseModal = (previousAction) => {
         closeModal();
     };
 };
+exports.useCloseModal = useCloseModal;

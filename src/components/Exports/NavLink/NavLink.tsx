@@ -4,10 +4,10 @@ import { styled } from 'styled-components';
 import { ReactNode } from 'react';
 import NavLinkHamburger from './NavLinkHamburger';
 
-const StyledLink = styled(AlignedLink)<{ isIcon: boolean }>`
+const StyledLink = styled(AlignedLink)<{ $isIcon: boolean }>`
   padding: 0;
   margin: 0;
-  line-height: ${({ isIcon }) => (isIcon ? '0' : 'normal')};
+  line-height: ${({ $isIcon }) => ($isIcon ? '0' : 'normal')};
 `;
 
 interface NavLinkProps {
@@ -24,7 +24,7 @@ const NavLink = ({ text, showText = true, to, icon, className }: NavLinkProps) =
   return isNormalView ? (
     <li className={className}>
       <AlignedButton>
-        <StyledLink to={to} isIcon={!!icon}>
+        <StyledLink to={to} $isIcon={!!icon}>
           {icon && icon}
           {showText && text}
         </StyledLink>

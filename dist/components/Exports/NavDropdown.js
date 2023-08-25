@@ -1,9 +1,14 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-import { useWindowWidth } from '../../context/WindowWidthContext';
-import NormalDropdown from '../Dropdown/Normal/NormalDropdown';
-import HamburgerDropdown from '../Dropdown/Hamburger/HamburgerDropdown';
-const NavDropdown = ({ children, buttonOptions, className }) => {
-    const isNormalView = useWindowWidth();
-    return isNormalView ? (_jsx(NormalDropdown, { buttonOptions: buttonOptions, className: className, children: children })) : (_jsx(HamburgerDropdown, { buttonOptions: buttonOptions, className: className, children: children }));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-export default NavDropdown;
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const WindowWidthContext_1 = require("../../context/WindowWidthContext");
+const NormalDropdown_1 = __importDefault(require("../Dropdown/Normal/NormalDropdown"));
+const HamburgerDropdown_1 = __importDefault(require("../Dropdown/Hamburger/HamburgerDropdown"));
+const NavDropdown = ({ children, buttonOptions, className }) => {
+    const isNormalView = (0, WindowWidthContext_1.useWindowWidth)();
+    return isNormalView ? ((0, jsx_runtime_1.jsx)(NormalDropdown_1.default, { buttonOptions: buttonOptions, className: className, children: children })) : ((0, jsx_runtime_1.jsx)(HamburgerDropdown_1.default, { buttonOptions: buttonOptions, className: className, children: children }));
+};
+exports.default = NavDropdown;

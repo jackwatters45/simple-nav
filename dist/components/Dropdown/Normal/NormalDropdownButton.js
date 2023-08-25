@@ -1,7 +1,12 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { AlignedButton } from '../../../styles/sharedComponents';
-import MenuDownIcon from '../../../assets/MenuDownIcon';
-const NormalDropdownButton = ({ buttonProps, icon, text, includeText = false, includeArrow = true, arrowSize = '.5rem', }) => {
-    return (_jsxs(AlignedButton, { ...buttonProps, className: `normal-dropdown-button`, children: [icon && icon, includeText && _jsx("span", { children: text }), includeArrow && _jsx(MenuDownIcon, { size: arrowSize })] }));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-export default NormalDropdownButton;
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const sharedComponents_1 = require("../../../styles/sharedComponents");
+const MenuDownIcon_1 = __importDefault(require("../../../assets/MenuDownIcon"));
+const NormalDropdownButton = ({ buttonProps, icon, text, includeText = false, includeArrow = true, arrowSize = '.5rem', }) => {
+    return ((0, jsx_runtime_1.jsxs)(sharedComponents_1.AlignedButton, { ...buttonProps, className: `normal-dropdown-button`, children: [icon && icon, includeText && (0, jsx_runtime_1.jsx)("span", { children: text }), includeArrow && (0, jsx_runtime_1.jsx)(MenuDownIcon_1.default, { size: arrowSize })] }));
+};
+exports.default = NormalDropdownButton;

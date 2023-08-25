@@ -1,22 +1,25 @@
-import { NavLink } from 'react-router-dom';
-import { css, styled } from 'styled-components';
-export const AlignComponent = css `
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StyledHamburgerNavDiv = exports.AlignedLink = exports.AlignedButton = exports.AlignedDiv = exports.AlignComponent = void 0;
+const react_router_dom_1 = require("react-router-dom");
+const styled_components_1 = require("styled-components");
+exports.AlignComponent = (0, styled_components_1.css) `
   display: flex;
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
 `;
-export const AlignedDiv = styled.div `
-  ${AlignComponent}
+exports.AlignedDiv = styled_components_1.styled.div `
+  ${exports.AlignComponent}
 `;
-export const AlignedButton = styled.button `
-  ${AlignComponent}
+exports.AlignedButton = styled_components_1.styled.button `
+  ${exports.AlignComponent}
   background-color: transparent;
 `;
-export const AlignedLink = styled(NavLink) `
-  ${AlignComponent}
+exports.AlignedLink = (0, styled_components_1.styled)(react_router_dom_1.NavLink) `
+  ${exports.AlignComponent}
 `;
-export const StyledHamburgerNavDiv = styled.div `
+exports.StyledHamburgerNavDiv = styled_components_1.styled.div `
   margin-left: 2rem;
   font-size: 2rem;
   font-weight: 700;

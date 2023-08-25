@@ -1,9 +1,14 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useModalTrigger } from 'react-hook-modal-pure';
-import NormalDropdownButton from './NormalDropdownButton';
-import NormalDropdownContent from './NormalDropdownContent';
-const NormalDropdown = ({ children, buttonOptions, className }) => {
-    const { isModalVisible, buttonProps, useModalParams } = useModalTrigger();
-    return (_jsxs("div", { className: `${className} normal-dropdown`, children: [_jsx(NormalDropdownButton, { buttonProps: buttonProps, ...buttonOptions }), isModalVisible && (_jsx(NormalDropdownContent, { useModalParams: useModalParams, children: children }))] }));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-export default NormalDropdown;
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_hook_modal_pure_1 = require("react-hook-modal-pure");
+const NormalDropdownButton_1 = __importDefault(require("./NormalDropdownButton"));
+const NormalDropdownContent_1 = __importDefault(require("./NormalDropdownContent"));
+const NormalDropdown = ({ children, buttonOptions, className }) => {
+    const { isModalVisible, buttonProps, useModalParams } = (0, react_hook_modal_pure_1.useModalTrigger)();
+    return ((0, jsx_runtime_1.jsxs)("div", { className: `${className} normal-dropdown`, children: [(0, jsx_runtime_1.jsx)(NormalDropdownButton_1.default, { buttonProps: buttonProps, ...buttonOptions }), isModalVisible && ((0, jsx_runtime_1.jsx)(NormalDropdownContent_1.default, { useModalParams: useModalParams, children: children }))] }));
+};
+exports.default = NormalDropdown;

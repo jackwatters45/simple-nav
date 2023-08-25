@@ -1,8 +1,11 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-import { useModal } from 'react-hook-modal-pure';
-import { keyframes, styled } from 'styled-components';
-import { CloseModalProvider } from '../../../context/CloseModalContext';
-const slideIn = keyframes `
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MenuBackground = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_hook_modal_pure_1 = require("react-hook-modal-pure");
+const styled_components_1 = require("styled-components");
+const CloseModalContext_1 = require("../../../context/CloseModalContext");
+const slideIn = (0, styled_components_1.keyframes) `
   from {
     transform: translateX(100%);
   }
@@ -10,7 +13,7 @@ const slideIn = keyframes `
     transform: translateX(0%);
   }
 `;
-export const MenuBackground = styled.nav `
+exports.MenuBackground = styled_components_1.styled.nav `
   position: absolute;
   top: 0;
   left: 0;
@@ -27,24 +30,24 @@ export const MenuBackground = styled.nav `
   background-color: ${(props) => props?.theme?.colors?.backgroundSecondary};
   animation: ${slideIn} 0.4s ease-in-out;
 `;
-const MenuContentContainer = styled.ul `
+const MenuContentContainer = styled_components_1.styled.ul `
   margin-top: 35vh;
   padding: 0;
   display: flex;
   justify-content: center;
   width: 100%;
 `;
-const MenuContentHamburger = styled.div `
+const MenuContentHamburger = styled_components_1.styled.div `
   display: flex;
   flex-direction: column;
   align-items: left;
 `;
 const HamburgerModal = ({ useModalParams, children }) => {
-    const modalProps = useModal({
+    const modalProps = (0, react_hook_modal_pure_1.useModal)({
         ...useModalParams,
         options: { rightPositionDistance: 16 },
     });
     const { closeModal } = useModalParams;
-    return (_jsx(MenuBackground, { ...modalProps, className: "hamburger-modal", children: _jsx(MenuContentContainer, { children: _jsx(CloseModalProvider, { value: closeModal, children: _jsx(MenuContentHamburger, { children: children }) }) }) }));
+    return ((0, jsx_runtime_1.jsx)(exports.MenuBackground, { ...modalProps, className: "hamburger-modal", children: (0, jsx_runtime_1.jsx)(MenuContentContainer, { children: (0, jsx_runtime_1.jsx)(CloseModalContext_1.CloseModalProvider, { value: closeModal, children: (0, jsx_runtime_1.jsx)(MenuContentHamburger, { children: children }) }) }) }));
 };
-export default HamburgerModal;
+exports.default = HamburgerModal;

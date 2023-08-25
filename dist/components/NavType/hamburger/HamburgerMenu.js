@@ -1,9 +1,14 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useModalTrigger } from 'react-hook-modal-pure';
-import HamburgerModal from './HamburgerModal';
-import MenuButton from './MenuButton';
-const HamburgerMenu = ({ children, className }) => {
-    const { isModalVisible, buttonProps, useModalParams } = useModalTrigger();
-    return (_jsxs("div", { className: `${className} hamburger-menu`, children: [_jsx(MenuButton, { buttonProps: buttonProps }), isModalVisible && (_jsx(HamburgerModal, { useModalParams: useModalParams, children: children }))] }));
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-export default HamburgerMenu;
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_hook_modal_pure_1 = require("react-hook-modal-pure");
+const HamburgerModal_1 = __importDefault(require("./HamburgerModal"));
+const MenuButton_1 = __importDefault(require("./MenuButton"));
+const HamburgerMenu = ({ children, className }) => {
+    const { isModalVisible, buttonProps, useModalParams } = (0, react_hook_modal_pure_1.useModalTrigger)();
+    return ((0, jsx_runtime_1.jsxs)("div", { className: `${className} hamburger-menu`, children: [(0, jsx_runtime_1.jsx)(MenuButton_1.default, { buttonProps: buttonProps }), isModalVisible && ((0, jsx_runtime_1.jsx)(HamburgerModal_1.default, { useModalParams: useModalParams, children: children }))] }));
+};
+exports.default = HamburgerMenu;

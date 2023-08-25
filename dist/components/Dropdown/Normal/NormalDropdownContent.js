@@ -1,7 +1,9 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-import { useModal } from 'react-hook-modal-pure';
-import { styled } from 'styled-components';
-const Container = styled.div `
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_hook_modal_pure_1 = require("react-hook-modal-pure");
+const styled_components_1 = require("styled-components");
+const Container = styled_components_1.styled.div `
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -15,10 +17,10 @@ const Container = styled.div `
   ${(props) => props?.theme?.shadow};
 `;
 const NormalDropdownContent = ({ useModalParams, children }) => {
-    const modalProps = useModal({
+    const modalProps = (0, react_hook_modal_pure_1.useModal)({
         ...useModalParams,
         options: { rightPositionDistance: 16 },
     });
-    return (_jsx(Container, { ...modalProps, className: `normal-dropdown-content`, children: children }));
+    return ((0, jsx_runtime_1.jsx)(Container, { ...modalProps, className: `normal-dropdown-content`, children: children }));
 };
-export default NormalDropdownContent;
+exports.default = NormalDropdownContent;

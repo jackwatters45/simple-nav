@@ -1,5 +1,7 @@
-import { jsx as _jsx } from "react/jsx-runtime";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
 const RegularNav = ({ children, className }) => {
-    return _jsx("div", { className: `${className} regular-nav`, children: children });
+    return (0, jsx_runtime_1.jsx)("div", { className: `${className} regular-nav`, children: children });
 };
-export default RegularNav;
+exports.default = RegularNav;
